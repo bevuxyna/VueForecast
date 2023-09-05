@@ -1,23 +1,25 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onBeforeMount } from "vue";
 import { API_KEY, BASE_URL } from "@/constants";
 import WeatherSummary from "@/components/WeatherSummary.vue";
 import Highlights from "@/components/Highlights.vue";
 
-const city = ref('Moscow');
+const city = ref('Paris');
 const weatherInfo = ref(null);
 
 const getWeather = () => {
-  fetch(`${BASE_URL}?q=${city.value}&appid=${API_KEY}`)
+  fetch(`${BASE_URL}?q=${city.value}&units=metric&appid=${API_KEY}`)
       .then((response) => {
         response.json();
       })
       .then((data) => {
         weatherInfo.value = data;
       })
-}
+};
 
-onMounted(getWeather)
+onBeforeMount(getWeather);
+
+console.log(weatherInfo.value);
 </script>
 
 <template>
@@ -36,7 +38,7 @@ onMounted(getWeather)
                       @keyup.enter="getWeather"
                   >
                 </div>
-                <WeatherSummary />
+                <WeatherSummary :weatherInfo="weatherInfo" />
               </div>
             </section>
             <section class="section section-right">
