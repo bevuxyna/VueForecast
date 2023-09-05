@@ -9,12 +9,8 @@ const weatherInfo = ref(null);
 
 const getWeather = () => {
   fetch(`${BASE_URL}?q=${city.value}&units=metric&appid=${API_KEY}`)
-      .then((response) => {
-        response.json();
-      })
-      .then((data) => {
-        weatherInfo.value = data;
-      })
+      .then((response) => response.json())
+      .then((data) => (weatherInfo.value = data));
 };
 
 onBeforeMount(getWeather);
