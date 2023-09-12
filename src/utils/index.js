@@ -1,4 +1,4 @@
-const PRESSUER_UNITS = 0.750062;
+const PRESSURE_UNITS = 0.750062;
 
 export const capitalizeFirstLetter = (str) => {
     if (!str) {
@@ -8,7 +8,7 @@ export const capitalizeFirstLetter = (str) => {
 }
 
 export const setPressuerUnitsToMm = (hpa) => {
-    return Math.round(hpa * PRESSUER_UNITS);
+    return Math.round(hpa * PRESSURE_UNITS);
 }
 
 export const getTime = (seconds) => {
