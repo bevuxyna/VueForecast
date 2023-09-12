@@ -19,8 +19,6 @@ const getWeather = () => {
 const isError = computed(() => weatherInfo.value?.cod !== 200);
 
 onBeforeMount(getWeather);
-
-console.log(weatherInfo.value);
 </script>
 
 <template>
