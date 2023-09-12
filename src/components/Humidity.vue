@@ -29,5 +29,3 @@ const props = defineProps({
     </div>
   </section>
 </template>
-
-<style></style>

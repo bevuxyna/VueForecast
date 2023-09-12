@@ -3,8 +3,8 @@ import { ref, onBeforeMount } from "vue";
 import { API_KEY, BASE_URL } from "@/constants";
 import WeatherSummary from "@/components/WeatherSummary.vue";
 import Highlights from "@/components/Highlights.vue";
-import Coords from "./components/Coords.vue";
-import Humidity from "./components/Humidity.vue";
+import Coords from "@/components/Coords.vue";
+import Humidity from "@/components/Humidity.vue";
 
 const city = ref('Paris');
 const weatherInfo = ref(null);
@@ -40,7 +40,7 @@ console.log(weatherInfo.value);
               </div>
             </section>
             <section class="section section-right">
-              <Highlights />
+              <Highlights :weatherInfo="weatherInfo" />
             </section>
           </div>
           <div v-if="weatherInfo?.weather" class="sections">
