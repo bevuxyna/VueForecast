@@ -1,14 +1,10 @@
-# vue-forecast
+# VueForecast
 
-This template should help get you started developing with Vue 3 in Vite.
+Приложение для поиска погоды.
 
-## Recommended IDE Setup
+## API
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Для получения данных о погоде используется OpenWeatherMap API.
 
 ## Project Setup
 
